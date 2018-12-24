@@ -8,6 +8,8 @@ from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D
 from keras.datasets import mnist
 from keras import backend as K
 
+# from tensorflow.python.client import device_lib
+
 def main():
     #sps = 200
     #sig_len = 6000
@@ -17,7 +19,12 @@ def main():
 
     #pp.plot(x,y+n)
     #pp.show()
-    
+
+    # gpus = K.._get_available_gpus()
+    # print(gpus)
+
+    # print(device_lib.list_local_devices())
+
     model = Sequential()
     model.add(Dense(units=128, activation='selu', input_dim=100))
 
