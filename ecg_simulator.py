@@ -22,8 +22,8 @@ def generate_sig(inphase_idx, W, T, amp, baseline, y, idx, x_len):
 # create triangular rythmic signals given random width and duty ratios
 def simu_rythm_sig(x_len, baseline=0, amp=1):
 
-    W = 20 #width of the peak
-    DR = 4 #duty ratio of the period
+    W = 10 #width of the peak
+    DR = 2 #duty ratio of the period
 
     init_phase = np.random.rand()
 
@@ -32,24 +32,24 @@ def simu_rythm_sig(x_len, baseline=0, amp=1):
     idx = 0
 
 
-    W_rand = math.floor(math.fabs(np.random.rand()*10)+W)
-    D_rand = (np.random.rand()*2+1)*DR
-    T_rand = math.floor(D_rand*W_rand)
+    W_rand = int(math.fabs(np.random.rand()*10)+W)
+    D_rand = (np.random.rand()+1)*DR
+    T_rand = int(D_rand*W_rand)
     amp_rand = ((np.random.rand()+0.5)*amp)
 
 
 
     # padding the beginning by phase
     if init_phase > 0:
-        inphase_idx = math.floor(T_rand*init_phase)
-
+        inphase_idx = int(T_rand*init_phase)
+        print(inphase_idx)
         idx = generate_sig(inphase_idx, W_rand, T_rand, amp_rand, baseline, y, idx, x_len)
 
     while idx < x_len:
 
-        W_rand = math.floor(math.fabs(np.random.rand()*10)+W)
+        W_rand = int(math.fabs(np.random.rand()*10)+W)
         D_rand = (np.random.rand()*2+1)*DR
-        T_rand = math.floor(D_rand*W_rand)
+        T_rand = int(D_rand*W_rand)
         amp_rand = ((np.random.rand()+0.5)*amp)
 
         inphase_idx = 0
@@ -70,8 +70,8 @@ def add_bg_gaussian_noise(sig, amp, snr):
 
 def add_transcient_noise(sig, amp, snr, noise_len, noise_baseline):
     sig_noisy = np.array(sig, copy=True)
-    idx_start = math.floor(np.random.rand()*len(sig))
-    noise_len = math.floor(np.random.rand()*noise_len)
+    idx_start = int(np.random.rand()*len(sig))
+    noise_len = int(np.random.rand()*noise_len)
 
     if idx_start + noise_len > len(sig):
         idx_range = range(idx_start, len(sig)-1)

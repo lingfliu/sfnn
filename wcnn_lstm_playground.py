@@ -17,61 +17,65 @@ from keras.models import Model
 """create training signal"""
 sigs = []
 sigs_noisy = []
-sample_num = 200
+sample_num = 400
 sample_len = 100
 
-input_dim = 32
+input_dim = 50
+batch_size = 20
+timestep = 50
+enc_channel = 100
 
+'''generate noisy rythmic signal'''
 for m in range(sample_num):
     sig = ecg_simulator.simu_rythm_sig(sample_len, 0, 1)
-    sig_noisy = ecg_simulator.add_bg_gaussian_noise(sig, 1, -10)
-    for i in range(20):
-        sig_noisy = ecg_simulator.add_transcient_noise(sig_noisy, 1, -5, 500, np.random.random())
+    sig_noisy = ecg_simulator.add_bg_gaussian_noise(sig, 1, -5)
+    for i in range(10):
+        sig_noisy = ecg_simulator.add_transcient_noise(sig_noisy, 1, 0, 10, np.random.random())
 
     sigs.append(sig)
     sigs_noisy.append(sig_noisy)
 
 x_train = []
 for sig in sigs_noisy:
-    seq_noisy = np.array([sig[idx:idx+input_dim-1] for idx in range(len(sig)-input_dim)])
+    seq_noisy = np.array([sig[idx:idx+input_dim] for idx in range(len(sig)-input_dim)])
     x_train.append(seq_noisy)
-
 x_train = np.array(x_train)
+
 '''use the middle of the input as the desired output'''
 x_train_decoded = []
 for sig in sigs:
-    seq_decoded = np.array([sig[idx+input_dim//2] for idx in range(len(sig)-input_dim*3//2)])
+    seq_decoded = np.array([[sig[idx+input_dim//2]] for idx in range(input_dim//2, len(sig)-input_dim//2)])
     x_train_decoded.append(seq_decoded)
 x_train_decoded = np.array(x_train_decoded)
-
+# x_train_decoded.reshape(200,68,1)
 
 """denoise autoencoder"""
-batch_size = 8
-timestep = 8
-input_dim = 32
-enc_channel = 32
 
-input_sig = Input(shape=(timestep, input_dim, 1, 1))
 
-enc = Bidirectional(ConvLSTM2D(32, kernel_size=(3,1), return_sequences=True), merge_mode='concat')(input_sig)
+input_sig = Input(shape=(timestep, input_dim))
+enc = Reshape(target_shape=(timestep, input_dim, 1, 1))(input_sig)
+enc = Bidirectional(ConvLSTM2D(50, kernel_size=(3,1), return_sequences=True), merge_mode='concat')(enc)
+enc = Bidirectional(ConvLSTM2D(50, kernel_size=(3,1), return_sequences=True), merge_mode='concat')(enc)
+
 '''pooling over each input'''
-enc = Reshape(target_shape=(input_dim-2, 64, timestep))(enc)
-enc = MaxPooling2D(pool_size=(2,1))(enc)
-enc = Reshape(target_shape=(timestep, (input_dim-2)//2*64))(enc)
+enc = Reshape(target_shape=(timestep, (input_dim-4)*100))(enc)
+# enc = Reshape(target_shape=(input_dim-2, 64, timestep))(enc)
+# enc = MaxPooling2D(pool_size=(2,1))(enc)
+# enc = Reshape(target_shape=(timestep, (input_dim-2)//2*64))(enc)
 
 '''calculate the output for each timestep'''
-enc = TimeDistributed(Dense(960, activation='relu'))(enc)
+enc = TimeDistributed(Dense(1, activation='relu'))(enc)
 '''end of enc'''
 #
-dec = Reshape(target_shape=(960, 1, 8))(enc)
-dec = UpSampling2D(size=(2,1))(dec)
-dec = Reshape(target_shape=(8,1920,1,1))(dec)
-dec = Bidirectional(ConvLSTM2D(32, kernel_size=(3,1), return_sequences=True), merge_mode='concat')(dec)
-dec = Reshape(target_shape=(8))
-# dec = Reshape(target_shape=(8,958*))
-model = Model(input_sig, dec)
+# dec = Reshape(target_shape=(960, 1, 8))(enc)
+# dec = UpSampling2D(size=(2,1))(dec)
+# dec = Reshape(target_shape=(8,1920,1,1))(dec)
+# dec = Bidirectional(ConvLSTM2D(32, kernel_size=(3,1), return_sequences=True), merge_mode='concat')(dec)
+# dec = Reshape(target_shape=(8))
 
-print(model.summary())
+dae = Model(input_sig, enc)
+
+print(dae.summary())
 
 
 # '''enc end here'''
@@ -92,12 +96,22 @@ print(model.summary())
 #
 # #todo: sequential the signal per sample
 # # y is a array of signal sequences
-# dae.fit(x_train[:1000], x_train_decoded[:1000], validation_data=(x_train[1500:], x_train_decoded[1500:]), batch_size=8, epochs=2, verbose=2)
-#
-# x_dec = dae.predict(x_train_decoded[1001:1100])
+dae.compile(optimizer='adadelta', loss='logcosh', metrics=['accuracy'])
+dae.fit(x_train[:200], x_train_decoded[:200], validation_data=(x_train[200:350], x_train_decoded[200:350]), batch_size=batch_size, epochs=50, verbose=2)
 
-#
-# sig_dim = 32
+x_dec = dae.predict(x_train[350:])
+
+for m in range(4):
+    for n in range(4):
+        idx = n*4+m
+        if idx >= 50:
+            break
+        ax = plt.subplot2grid((4,4),(m,n))
+        ax.plot(x_dec[idx])
+        ax.plot(sigs[idx+350][50:])
+        ax.plot(sigs_noisy[idx+350][50:])
+plt.show()
+
 # input_sig = Input(shape=(784, ))
 # encoded = Dense(sig_dim, activation='relu')(input_sig)
 # decoded = Dense(784, activation='sigmoid')(encoded)

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114370e7-b9dc-4791-bfd0-4c932b78391b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/conv_lstm_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lstm_ae_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/afnn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/afnn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -18,24 +15,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sfnn$conv_lstm_example.coverage" NAME="conv_lstm_example Coverage Results" MODIFIED="1545734890569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/afnn$main.coverage" NAME="main Coverage Results" MODIFIED="1544594935764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sfnn$main.coverage" NAME="main Coverage Results" MODIFIED="1545744251754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$conv_lstm_example.coverage" NAME="conv_lstm_example Coverage Results" MODIFIED="1545734890569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$wcnn_lstm_playground.coverage" NAME="wcnn_lstm_playground Coverage Results" MODIFIED="1545734896146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sfnn$ecg_simulator.coverage" NAME="ecg_simulator Coverage Results" MODIFIED="1545566731333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$wcnn_lstm_playground.coverage" NAME="wcnn_lstm_playground Coverage Results" MODIFIED="1545794402382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="sfnn" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecg_simulator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+              <folding>
+                <element signature="e#1#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcnn_lstm_playground.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
+            <state relative-caret-position="533">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               <folding>
-                <element signature="e#0#98#0" expanded="true" />
+                <element signature="e#0#152#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,27 +89,27 @@
         <option value="$PROJECT_DIR$/cnn_lstm_demo.py" />
         <option value="$PROJECT_DIR$/tensorflow_config.py" />
         <option value="$PROJECT_DIR$/theano_config.py" />
-        <option value="$PROJECT_DIR$/ecg_simulator.py" />
         <option value="$PROJECT_DIR$/conv_lstm_examples.py" />
         <option value="$PROJECT_DIR$/lstm_ae_example.py" />
         <option value="$PROJECT_DIR$/conv_lstm_example.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/tester.py" />
+        <option value="$PROJECT_DIR$/ecg_simulator.py" />
         <option value="$PROJECT_DIR$/wcnn_lstm_playground.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="958" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="1247" />
+    <option name="height" value="1415" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,6 +121,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,11 +318,13 @@
       <workItem from="1545660588713" duration="8815000" />
       <workItem from="1545746921661" duration="33000" />
       <workItem from="1545746970844" duration="3095000" />
+      <workItem from="1545787867399" duration="4788000" />
+      <workItem from="1545792879692" duration="3476000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38107000" />
+    <option name="totallyTimeSpent" value="46371000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -310,30 +336,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="958" extended-state="0" />
-    <editor active="true" />
+    <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49280575" visible="true" weight="0.1990172" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49280575" visible="true" weight="0.13582273" />
       <window_info id="Structure" order="1" sideWeight="0.5005931" side_tool="true" weight="0.1640049" />
       <window_info id="Favorites" order="2" sideWeight="0.5071942" side_tool="true" weight="0.16646191" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4214876" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3966942" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49979484" weight="0.3965245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32781065" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32742316" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50020516" side_tool="true" weight="0.3965245" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3289941" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.4025974" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.12480253" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32938388" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49878347" weight="0.4551597" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49878347" weight="0.7583094" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32991382" />
       <window_info anchor="right" x="0" y="0" width="590" height="1135" id="Documentation" order="5" sideWeight="0.50121653" side_tool="true" visible="true" weight="0.3296875" />
     </layout>
   </component>
@@ -362,11 +388,41 @@
         <watch expression="np.array([sig[idx+input_dim/2] for idx in range(math.floor(len(sig)-input_dim*3/2))])" language="Python" />
         <watch expression="input_dim/2" language="Python" />
         <watch expression="np.shape(x_train)" language="Python" />
+        <watch expression="np.shape(seq_noisy)" language="Python" />
+        <watch expression="range(10)" language="Python" />
+        <watch expression="len(sig)" language="Python" />
+        <watch expression="x_train[:50]" language="Python" />
+        <watch expression="x_train_decoded[:50]" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>x_train_decoded[:50]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>x_train[:50]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(sig)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>range(10)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.shape(seq_noisy)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>np.shape(x_train)</expression-string>
         <language-id>Python</language-id>
@@ -392,31 +448,6 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>len(sig)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>input_dim*3/2</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>config</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>10**2</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>math.exp(1)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -425,9 +456,7 @@
     <entry file="file://$PROJECT_DIR$/nn.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/models.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/layers/convolutional_recurrent.py" />
-    <entry file="file://$PROJECT_DIR$/.main.py.swp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.main.py.swp" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/mpmath/__init__.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/numpy/random/__init__.py" />
     <entry file="file://$PROJECT_DIR$/sig_simulator.py">
@@ -466,37 +495,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/layers/pooling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="779" selection-start-line="779" selection-end-line="779" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/backend/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/engine/base_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="413" selection-start-line="413" selection-end-line="413" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecg_simulator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/layers/pooling.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/backend/common.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/engine/base_layer.py" />
     <entry file="file://$PROJECT_DIR$/cnn_lstm_demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2030">
@@ -504,16 +505,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conv_lstm_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#201#241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/conv_lstm_example.py" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1116">
@@ -521,29 +513,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tester.py">
+    <entry file="file://$PROJECT_DIR$/tester.py" />
+    <entry file="file://$PROJECT_DIR$/lstm_ae_example.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/ml2/lib/python2.7/site-packages/keras/utils/generic_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="303">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/ml2/lib/python2.7/site-packages/keras/engine/training_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecg_simulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
           <folding>
-            <element signature="e#1#41#0" expanded="true" />
+            <element signature="e#1#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_ae_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="94" selection-start-line="3" selection-start-column="94" selection-end-line="3" selection-end-column="94" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/test.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/wcnn_lstm_playground.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
+        <state relative-caret-position="533">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           <folding>
-            <element signature="e#0#98#0" expanded="true" />
+            <element signature="e#0#152#0" expanded="true" />
           </folding>
         </state>
       </provider>
