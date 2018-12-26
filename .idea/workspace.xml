@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114370e7-b9dc-4791-bfd0-4c932b78391b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/afnn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/afnn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecg_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecg_simulator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcnn_lstm_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/wcnn_lstm_playground.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcnn_lstm_playground.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="506">
+              <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
               <folding>
                 <element signature="e#0#152#0" expanded="true" />
               </folding>
@@ -319,12 +315,12 @@
       <workItem from="1545746921661" duration="33000" />
       <workItem from="1545746970844" duration="3095000" />
       <workItem from="1545787867399" duration="4788000" />
-      <workItem from="1545792879692" duration="3476000" />
+      <workItem from="1545792879692" duration="7317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46371000" />
+    <option name="totallyTimeSpent" value="50212000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,6 +333,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49280575" visible="true" weight="0.13582273" />
       <window_info id="Structure" order="1" sideWeight="0.5005931" side_tool="true" weight="0.1640049" />
@@ -353,12 +350,12 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32742316" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50020516" side_tool="true" weight="0.3965245" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3289941" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.12480253" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.24407583" />
       <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32938388" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49878347" weight="0.7583094" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49878347" weight="0.81124336" />
       <window_info anchor="right" id="Database" order="4" weight="0.32991382" />
       <window_info anchor="right" x="0" y="0" width="590" height="1135" id="Documentation" order="5" sideWeight="0.50121653" side_tool="true" visible="true" weight="0.3296875" />
     </layout>
@@ -544,8 +541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wcnn_lstm_playground.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="506">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
           <folding>
             <element signature="e#0#152#0" expanded="true" />
           </folding>
