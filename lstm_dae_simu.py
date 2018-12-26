@@ -18,12 +18,12 @@ from keras.models import Model
 sigs = []
 sigs_noisy = []
 sample_num = 400
-sample_len = 200
+sample_len = 500
 
-input_dim = 80
+input_dim = 200
 batch_size = 10
 timestep = sample_len-input_dim
-filter_size = 30
+filter_size = 100
 kernel_size = 2
 
 '''generate noisy rythmic signal'''
@@ -54,30 +54,24 @@ x_train_decoded = np.array(x_train_decoded)
 
 
 input_sig = Input(shape=(timestep, input_dim))
-enc = Reshape(target_shape=(timestep, input_dim, 1, 1))(input_sig)
-enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
-enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
-enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
-enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
-
+# enc = Reshape(target_shape=(timestep, input_dim))(input_sig)
+enc = LSTM(units=filter_size, return_sequences=True)(input_sig)
+enc = LSTM(units=filter_size, return_sequences=True)(enc)
+enc = LSTM(units=filter_size, return_sequences=True)(enc)
+enc = LSTM(units=filter_size, return_sequences=True)(enc)
+enc = TimeDistributed(Dense(1, activation='relu'))(enc)
 '''pooling over each input'''
-enc = Reshape(target_shape=(timestep, (input_dim-kernel_size*2)*filter_size*2))(enc)
+# enc = Reshape(target_shape=(timestep, (input_dim-kernel_size*2)*filter_size*2))(enc)
 # enc = Reshape(target_shape=(input_dim-2, 64, timestep))(enc)
 # enc = MaxPooling2D(pool_size=(2,1))(enc)
 # enc = Reshape(target_shape=(timestep, (input_dim-2)//2*64))(enc)
 
 '''calculate the output for each timestep'''
-enc = TimeDistributed(Dense(240, activation='relu'))(enc)
-enc = TimeDistributed(Dense(120, activation='relu'))(enc)
-enc = TimeDistributed(Dense(1, activation='relu'))(enc)
+# enc = TimeDistributed(Dense(240, activation='relu'))(enc)
+# enc = TimeDistributed(Dense(120, activation='relu'))(enc)
+# enc = TimeDistributed(Dense(1, activation='relu'))(enc)
 
 '''end of enc'''
-#
-# dec = Reshape(target_shape=(960, 1, 8))(enc)
-# dec = UpSampling2D(size=(2,1))(dec)
-# dec = Reshape(target_shape=(8,1920,1,1))(dec)
-# dec = Bidirectional(ConvLSTM2D(32, kernel_size=(3,1), return_sequences=True), merge_mode='concat')(dec)
-# dec = Reshape(target_shape=(8))
 
 dae = Model(input_sig, enc)
 
@@ -87,7 +81,7 @@ print(dae.summary())
 # #todo: sequential the signal per sample
 # # y is a array of signal sequences
 dae.compile(optimizer='adadelta', loss='logcosh', metrics=['accuracy'])
-dae.fit(x_train[:200], x_train_decoded[:200], validation_data=(x_train[200:350], x_train_decoded[200:350]), batch_size=batch_size, epochs=50, verbose=2)
+dae.fit(x_train[:200], x_train_decoded[:200], validation_data=(x_train[200:350], x_train_decoded[200:350]), batch_size=batch_size, epochs=2, verbose=2)
 
 x_dec = dae.predict(x_train[350:])
 
