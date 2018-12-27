@@ -42,7 +42,6 @@ def simu_rythm_sig(x_len, baseline=0, amp=1):
     # padding the beginning by phase
     if init_phase > 0:
         inphase_idx = int(T_rand*init_phase)
-        print(inphase_idx)
         idx = generate_sig(inphase_idx, W_rand, T_rand, amp_rand, baseline, y, idx, x_len)
 
     while idx < x_len:
