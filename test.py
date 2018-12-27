@@ -18,3 +18,7 @@ d.append(c1)
 d.append(c2)
 d = np.array(d)
 print(np.shape(d))
+
+import keras
+
+

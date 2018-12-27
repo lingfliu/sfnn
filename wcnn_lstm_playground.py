@@ -14,14 +14,28 @@ import math
 from keras.layers import Input, Dense
 from keras.models import Model
 
+import tensorflow as tf
+from keras import backend as K
+
+# num_cores = 48
+#
+# num_CPU = 24
+# num_GPU = 0
+#
+# config = tf.ConfigProto(intra_op_parallelism_threads=num_cores,\
+#         inter_op_parallelism_threads=num_cores, allow_soft_placement=True,\
+#         device_count = {'CPU' : num_CPU, 'GPU' : num_GPU})
+# session = tf.Session(config=config)
+# K.set_session(session)
+
 """create training signal"""
 sigs = []
 sigs_noisy = []
 sample_num = 400
-sample_len = 200
+sample_len = 500
 
-input_dim = 80
-batch_size = 10
+input_dim = 50
+batch_size = 20
 timestep = sample_len-input_dim
 filter_size = 30
 kernel_size = 2
@@ -52,23 +66,19 @@ x_train_decoded = np.array(x_train_decoded)
 
 """denoise autoencoder"""
 
-
 input_sig = Input(shape=(timestep, input_dim))
 enc = Reshape(target_shape=(timestep, input_dim, 1, 1))(input_sig)
 enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
 enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
-enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
-enc = Bidirectional(ConvLSTM2D(filter_size, kernel_size=(kernel_size, 1), return_sequences=True), merge_mode='concat')(enc)
 
 '''pooling over each input'''
-enc = Reshape(target_shape=(timestep, (input_dim-kernel_size*2)*filter_size*2))(enc)
+enc = Reshape(target_shape=(timestep, (input_dim-kernel_size)*filter_size*2))(enc)
 # enc = Reshape(target_shape=(input_dim-2, 64, timestep))(enc)
 # enc = MaxPooling2D(pool_size=(2,1))(enc)
 # enc = Reshape(target_shape=(timestep, (input_dim-2)//2*64))(enc)
 
 '''calculate the output for each timestep'''
 enc = TimeDistributed(Dense(240, activation='relu'))(enc)
-enc = TimeDistributed(Dense(120, activation='relu'))(enc)
 enc = TimeDistributed(Dense(1, activation='relu'))(enc)
 
 '''end of enc'''
@@ -87,7 +97,7 @@ print(dae.summary())
 # #todo: sequential the signal per sample
 # # y is a array of signal sequences
 dae.compile(optimizer='adadelta', loss='logcosh', metrics=['accuracy'])
-dae.fit(x_train[:200], x_train_decoded[:200], validation_data=(x_train[200:350], x_train_decoded[200:350]), batch_size=batch_size, epochs=50, verbose=2)
+dae.fit(x_train[:200], x_train_decoded[:200], validation_data=(x_train[200:350], x_train_decoded[200:350]), batch_size=batch_size, epochs=50, verbose=1)
 
 x_dec = dae.predict(x_train[350:])
 

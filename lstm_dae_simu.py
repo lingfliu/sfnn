@@ -14,16 +14,32 @@ import math
 from keras.layers import Input, Dense
 from keras.models import Model
 
+
+import tensorflow as tf
+from keras import backend as K
+
+num_cores = 48
+
+num_CPU = 24
+num_GPU = 0
+
+config = tf.ConfigProto(intra_op_parallelism_threads=num_cores,\
+        inter_op_parallelism_threads=num_cores, allow_soft_placement=True,\
+        device_count = {'CPU' : num_CPU, 'GPU' : num_GPU})
+session = tf.Session(config=config)
+K.set_session(session)
+
 """create training signal"""
 sigs = []
 sigs_noisy = []
-sample_num = 400
+sample_num = 1000
 sample_len = 500
 
-input_dim = 200
+input_dim = 20
 batch_size = 10
 timestep = sample_len-input_dim
-filter_size = 100
+epochs = 10
+filter_size = 40
 kernel_size = 2
 
 '''generate noisy rythmic signal'''
@@ -59,7 +75,8 @@ enc = LSTM(units=filter_size, return_sequences=True)(input_sig)
 enc = LSTM(units=filter_size, return_sequences=True)(enc)
 enc = LSTM(units=filter_size, return_sequences=True)(enc)
 enc = LSTM(units=filter_size, return_sequences=True)(enc)
-enc = TimeDistributed(Dense(1, activation='relu'))(enc)
+enc = TimeDistributed(Dense(1, activation='linear'))(enc)
+
 '''pooling over each input'''
 # enc = Reshape(target_shape=(timestep, (input_dim-kernel_size*2)*filter_size*2))(enc)
 # enc = Reshape(target_shape=(input_dim-2, 64, timestep))(enc)
@@ -80,10 +97,11 @@ print(dae.summary())
 
 # #todo: sequential the signal per sample
 # # y is a array of signal sequences
-dae.compile(optimizer='adadelta', loss='logcosh', metrics=['accuracy'])
-dae.fit(x_train[:200], x_train_decoded[:200], validation_data=(x_train[200:350], x_train_decoded[200:350]), batch_size=batch_size, epochs=2, verbose=2)
+dae.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9), loss='mean_squared_error', metrics=['accuracy'])
+dae.fit(x_train[:500], x_train_decoded[:500], validation_data=(x_train[500:800], x_train_decoded[500:800]), batch_size=batch_size, epochs=epochs, verbose=1)
 
-x_dec = dae.predict(x_train[350:])
+predict_idx = 800
+x_dec = dae.predict(x_train[predict_idx:])
 
 for m in range(4):
     for n in range(4):
@@ -92,6 +110,6 @@ for m in range(4):
             break
         ax = plt.subplot2grid((4,4),(m,n))
         ax.plot(x_dec[idx])
-        ax.plot(sigs[idx+350][input_dim:])
-        ax.plot(sigs_noisy[idx+350][input_dim:])
+        ax.plot(sigs[idx+predict_idx][input_dim:])
+        ax.plot(sigs_noisy[idx+predict_idx][input_dim:])
 plt.show()
