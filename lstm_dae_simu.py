@@ -18,10 +18,10 @@ from keras.models import Model
 import tensorflow as tf
 from keras import backend as K
 
-num_cores = 48
+num_cores = 96
 
-num_CPU = 24
-num_GPU = 0
+num_CPU = 2
+num_GPU = 1
 
 config = tf.ConfigProto(intra_op_parallelism_threads=num_cores,\
         inter_op_parallelism_threads=num_cores, allow_soft_placement=True,\
@@ -35,12 +35,12 @@ sigs_noisy = []
 sample_num = 1000
 sample_len = 500
 
-input_dim = 20
+input_dim = 50
 batch_size = 10
 timestep = sample_len-input_dim
-epochs = 10
-filter_size = 40
-kernel_size = 2
+epochs = 50
+filter_size = 100
+kernel_size = 3
 
 '''generate noisy rythmic signal'''
 for m in range(sample_num):
@@ -70,11 +70,18 @@ x_train_decoded = np.array(x_train_decoded)
 
 
 input_sig = Input(shape=(timestep, input_dim))
-# enc = Reshape(target_shape=(timestep, input_dim))(input_sig)
+enc = Reshape(target_shape=(timestep, input_dim,1,1))(input_sig)
+# enc = ConvLSTM2D(filter_size, kernel_size=(kernel_size,1), strides=1, return_sequences=True)(enc)
+# enc = ConvLSTM2D(filter_size, kernel_size=(kernel_size,1), strides=1, return_sequences=True)(enc)
+
 enc = LSTM(units=filter_size, return_sequences=True)(input_sig)
 enc = LSTM(units=filter_size, return_sequences=True)(enc)
-enc = LSTM(units=filter_size, return_sequences=True)(enc)
-enc = LSTM(units=filter_size, return_sequences=True)(enc)
+enc = Reshape(target_shape=(timestep,filter_size, 1))(enc)
+enc = TimeDistributed(Conv1D(64,kernel_size=kernel_size, strides=1, activation='relu'))(enc)
+enc = TimeDistributed(MaxPooling1D(pool_size=2))(enc)
+enc = TimeDistributed(Conv1D(64,kernel_size=kernel_size, strides=1, activation='relu'))(enc)
+enc = TimeDistributed(MaxPooling1D(pool_size=2))(enc)
+enc = TimeDistributed(Flatten(data_format='channels_first'))(enc)
 enc = TimeDistributed(Dense(1, activation='linear'))(enc)
 
 '''pooling over each input'''
@@ -97,7 +104,7 @@ print(dae.summary())
 
 # #todo: sequential the signal per sample
 # # y is a array of signal sequences
-dae.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9), loss='mean_squared_error', metrics=['accuracy'])
+dae.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9), loss='mean_squared_error', metrics=['cosine'])
 dae.fit(x_train[:500], x_train_decoded[:500], validation_data=(x_train[500:800], x_train_decoded[500:800]), batch_size=batch_size, epochs=epochs, verbose=1)
 
 predict_idx = 800
