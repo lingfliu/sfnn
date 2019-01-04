@@ -98,7 +98,7 @@ print(np.remainder(a, 2*sp.pi))
 # print(a[30//2::-1])
 print(sp.log2(2))
 import ecgsyn
-(a,b) = ecgsyn.ecgsyn()
+(a,b) = ecgsyn.ecgsyn(sfecg=250, anoise=1, N=100)
 plt.plot(a[:1000])
 plt.plot(b[:1000])
 plt.show()
