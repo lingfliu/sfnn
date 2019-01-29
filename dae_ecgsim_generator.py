@@ -19,7 +19,7 @@ sigs_noisy = []
 
 
 def task_noisy_ecg_generate(i, queue):
-    # print('generating ecg of : ', i)
+    print('generating ecg of : ', i)
     (ecg, pqrst_idx) = ecgsyn(sfecg=sps, anoise=0, N=ecg_N)  # sampling freq 250, num of heart beats 10
     ecg_noisy = add_bg_gaussian_noise(ecg, base_snr)
     mu_ecg = np.mean(ecg)
@@ -40,11 +40,16 @@ if __name__ == '__main__':
 
     '''using multiprocessing to accelerate'''
     queue = Manager().Queue(maxsize=sample_len)
-    pool = Pool()
+    #
+    # pool = Pool()
+    # for i in range(sample_len):
+    #     pool.apply_async(task_noisy_ecg_generate, args=(i, queue))
+    #
+    # pool.close()
+    # pool.join()
     for i in range(sample_len):
-        pool.apply_async(task_noisy_ecg_generate, args=(i, queue))
+        task_noisy_ecg_generate(i, queue)
 
-    pool.close()
     while True:
         (ecg, ecg_noisy, pqrst_idx) = queue.get()
         sigs.append(ecg)
@@ -55,7 +60,7 @@ if __name__ == '__main__':
             pickle.dump((sigs, sigs_noisy, idx, sps, ecg_N, base_snr, artifact_snr), open('dae_ecgsim_stepnoise_500.dat', 'wb'))
             break
 
-    pool.join()
+    # pool.join()
 
     plt.plot(sigs_noisy[0])
     plt.plot(sigs[0])

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114370e7-b9dc-4791-bfd0-4c932b78391b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/dae_ecgsim.py" beforeDir="false" afterPath="$PROJECT_DIR$/dae_ecgsim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/afnn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/afnn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classify_ecgsim.py" beforeDir="false" afterPath="$PROJECT_DIR$/classify_ecgsim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dae_ecgsim_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dae_ecgsim_generator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,17 +15,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/sfnn$multiprocess_test.coverage" NAME="multiprocess_test Coverage Results" MODIFIED="1548076313353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$classify_ecgsim.coverage" NAME="classify_ecgsim Coverage Results" MODIFIED="1548729896553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$lstm_ae_example.coverage" NAME="lstm_ae_example Coverage Results" MODIFIED="1548160585721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/playground" />
-    <SUITE FILE_PATH="coverage/sfnn$wcnn_lstm_playground.coverage" NAME="wcnn_lstm_playground Coverage Results" MODIFIED="1545794402382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$ecg_simulator.coverage" NAME="ecg_simulator Coverage Results" MODIFIED="1545566731333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$stateful_lstm_dae_simu.coverage" NAME="stateful_lstm_dae_simu Coverage Results" MODIFIED="1545838908645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$conv_lstm_example.coverage" NAME="conv_lstm_example Coverage Results" MODIFIED="1545734890569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$dae_ecgsim.coverage" NAME="dae_ecgsim Coverage Results" MODIFIED="1548247008638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/afnn$main.coverage" NAME="main Coverage Results" MODIFIED="1544594935764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sfnn$main.coverage" NAME="main Coverage Results" MODIFIED="1545744251754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$stateful_lstm_dae_simu.coverage" NAME="stateful_lstm_dae_simu Coverage Results" MODIFIED="1545838908645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$classify_ecgsim.coverage" NAME="classify_ecgsim Coverage Results" MODIFIED="1548764416656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$conv_lstm_example.coverage" NAME="conv_lstm_example Coverage Results" MODIFIED="1545734890569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$wcnn_lstm_playground.coverage" NAME="wcnn_lstm_playground Coverage Results" MODIFIED="1545794402382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$ecg_simulator.coverage" NAME="ecg_simulator Coverage Results" MODIFIED="1545566731333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$dae_ecgsim.coverage" NAME="dae_ecgsim Coverage Results" MODIFIED="1548247008638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sfnn$dae_ecgsim_generator.coverage" NAME="dae_ecgsim_generator Coverage Results" MODIFIED="1548303551932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$multiprocess_test.coverage" NAME="multiprocess_test Coverage Results" MODIFIED="1548076313353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$lstm_ae_example.coverage" NAME="lstm_ae_example Coverage Results" MODIFIED="1548160585721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/playground" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -43,10 +47,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
+        <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="162" column="123" selection-start-line="162" selection-start-column="123" selection-end-line="162" selection-end-column="123" />
+            <state relative-caret-position="617">
+              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
               <folding>
                 <element signature="e#0#115#0" expanded="true" />
               </folding>
@@ -55,33 +59,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1119">
-              <caret line="149" column="117" selection-start-line="149" selection-start-column="117" selection-end-line="149" selection-end-column="117" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dae_ecgsim_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1344">
-              <caret line="54" column="114" selection-start-line="54" selection-start-column="114" selection-end-line="54" selection-end-column="114" />
+            <state relative-caret-position="-339">
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding>
                 <element signature="e#43#93#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sig_simulator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1400">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,14 +116,14 @@
         <option value="$PROJECT_DIR$/playground/lstm_ae_example.py" />
         <option value="$PROJECT_DIR$/playground/point_lstm_simu.py" />
         <option value="$PROJECT_DIR$/sig_simulator.py" />
+        <option value="$PROJECT_DIR$/dae_ecgsim.py" />
         <option value="$PROJECT_DIR$/dae_ecgsim_generator.py" />
         <option value="$PROJECT_DIR$/classify_ecgsim.py" />
-        <option value="$PROJECT_DIR$/dae_ecgsim.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="30" />
     <option name="width" value="1680" />
     <option name="height" value="958" />
   </component>
@@ -173,7 +156,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -203,7 +186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dae_ecgsim">
+  <component name="RunManager" selected="Python.classify_ecgsim">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -249,6 +232,9 @@
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -268,9 +254,6 @@
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -339,9 +322,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dae_ecgsim" />
         <item itemvalue="Python.classify_ecgsim" />
         <item itemvalue="Python.dae_ecgsim_generator" />
+        <item itemvalue="Python.dae_ecgsim" />
         <item itemvalue="Python.point_lstm_simu" />
         <item itemvalue="Python.lstm_ae_example" />
       </list>
@@ -381,11 +364,13 @@
       <workItem from="1548200079994" duration="25852000" />
       <workItem from="1548300810277" duration="14320000" />
       <workItem from="1548730082341" duration="13268000" />
+      <workItem from="1548750008870" duration="37000" />
+      <workItem from="1548750378124" duration="3774000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173735000" />
+    <option name="totallyTimeSpent" value="177546000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -397,15 +382,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="0" y="30" width="1680" height="958" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49280575" visible="true" weight="0.2153518" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49280575" visible="true" weight="0.22174448" />
       <window_info id="Structure" order="1" sideWeight="0.5005931" side_tool="true" weight="0.1640049" />
       <window_info id="Favorites" order="2" sideWeight="0.5071942" side_tool="true" weight="0.16646191" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32924107" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4214876" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49979484" weight="0.3931624" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49979484" weight="0.3931523" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32781065" />
@@ -414,7 +400,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32742316" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50020516" side_tool="true" weight="0.3965245" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32821724" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.32051283" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3199528" />
       <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32938388" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -446,35 +432,45 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="mu_noise" language="Python" />
-        <watch expression="mu_ecg" language="Python" />
-        <watch expression="sigs" language="Python" />
-        <watch expression="sigs" language="Python" />
-        <watch expression="queue.put(1)" language="Python" />
-        <watch expression="queue" language="Python" />
-        <watch expression="y_train[0]" language="Python" />
-        <watch expression="x_train[0]" language="Python" />
-        <watch expression="len(sig_noisy)" language="Python" />
+        <watch expression="np.shape(y_train)" language="Python" />
         <watch expression="np.shape(x_train)" language="Python" />
+        <watch expression="np.shape(y)" language="Python" />
         <watch expression="np.shape(y_train)" language="Python" />
-        <watch expression="np.shape(y)" language="Python" />
-        <watch expression="y" language="Python" />
-        <watch expression="np.shape(y)" language="Python" />
-        <watch expression="len(y[1])" language="Python" />
-        <watch expression="np.shape(y_train)" language="Python" />
-        <watch expression="np.shape(y)" language="Python" />
+        <watch expression="np.shape(labels)" language="Python" />
+        <watch expression="np.shape(label)" language="Python" />
+        <watch expression="(len(label)-input_dim)//stride" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
+        <expression-string>np.shape(y_train)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(len(label)-input_dim)//stride</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.shape(label)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.shape(labels)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>np.shape(y)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.shape(y_train)</expression-string>
+        <expression-string>np.shape(x_train)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -490,26 +486,6 @@
       </expression>
       <expression>
         <expression-string>y[0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>y</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.shape(x_train)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>x_train</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>len(sig_noisy)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -582,13 +558,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-1193363429/numpy/random/mtrand.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="1602" column="50" lean-forward="true" selection-start-line="1599" selection-start-column="7" selection-end-line="1685" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-1193363429/numpy/random/mtrand.py" />
     <entry file="file://$PROJECT_DIR$/playground/ecg_simulator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
@@ -606,13 +576,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/layers/pooling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="258" column="8" selection-start-line="258" selection-start-column="8" selection-end-line="258" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/layers/pooling.py" />
     <entry file="file://$PROJECT_DIR$/playground/conv_lstm_example.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
@@ -624,13 +588,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/playground/ecg_convlstm.py" />
-    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="1114" column="8" selection-start-line="1114" selection-start-column="8" selection-end-line="1114" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/engine/training.py" />
     <entry file="file://$PROJECT_DIR$/neural_check.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -655,13 +613,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/multiprocessing/queues.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/multiprocessing/queues.py" />
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
@@ -703,13 +655,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/losses.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/losses.py" />
     <entry file="file://$PROJECT_DIR$/playground/point_lstm_simu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -740,33 +686,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/layers/merge.py">
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/layers/merge.py" />
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/layers/convolutional.py" />
+    <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/keras/layers/convolutional.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="321" column="17" selection-start-line="321" selection-start-column="17" selection-end-line="321" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dae_ecgsim_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1344">
-          <caret line="54" column="114" selection-start-line="54" selection-start-column="114" selection-end-line="54" selection-end-column="114" />
+        <state relative-caret-position="457">
+          <caret line="162" column="123" selection-start-line="162" selection-start-column="123" selection-end-line="162" selection-end-column="123" />
           <folding>
-            <element signature="e#43#93#0" expanded="true" />
+            <element signature="e#0#115#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sig_simulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
+        <state relative-caret-position="950">
           <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
@@ -774,17 +708,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
+    <entry file="file://$PROJECT_DIR$/dae_ecgsim_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1119">
-          <caret line="149" column="117" selection-start-line="149" selection-start-column="117" selection-end-line="149" selection-end-column="117" />
+        <state relative-caret-position="-339">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <element signature="e#43#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
+    <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="162" column="123" selection-start-line="162" selection-start-column="123" selection-end-line="162" selection-end-column="123" />
+        <state relative-caret-position="617">
+          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
           <folding>
             <element signature="e#0#115#0" expanded="true" />
           </folding>

@@ -2,6 +2,8 @@ from keras.layers import ConvLSTM2D, Dense, Conv1D, TimeDistributed, BatchNormal
 from keras.layers import Bidirectional, CuDNNLSTM, Dropout, LSTM, Add, Conv2D, Multiply
 from keras.layers import Reshape, Input, Flatten, BatchNormalization
 from keras.models import Model
+from keras.utils import  to_categorical
+
 import keras
 
 '''lib loading error prevention'''
@@ -56,9 +58,30 @@ for sig in sigs_noisy:
     seq_noisy = np.array([sig[i*stride:i*stride+input_dim] for i in range((len(sig)-input_dim)//stride)])
     x_train.append(seq_noisy)
 
+labels = []
+for idxx in idx:
+    label = np.ones(np.shape(idxx))
+    label_start = -1
+    for m in range(len(idxx)):
+        if idxx[m] > 0:
+            if idxx[m] == 4:
+                label_start = -1
+            else:
+                label_start = idxx[m]
+        else:
+            pass
+
+        label[m] = label_start
+
+    labels.append(label)
+
+
+
+
 y_train = []
-for sig in sigs:
-    y = np.array([sig[i*stride+input_dim//2-output_dim//2:i*stride+input_dim//2 - output_dim//2 + output_dim] for i in range( (len(sig)-input_dim)//stride )])
+for label in labels:
+    y = np.array([label[i*stride+input_dim//2-output_dim//2:i*stride+input_dim//2 - output_dim//2 + output_dim] for i in range( (len(label)-input_dim)//stride )])
+    y = to_categorical(y, num_classes=6)
     y_train.append(y)
 
 # update the timestep
@@ -69,15 +92,15 @@ y_train = np.array(y_train)
 '''build neural'''
 
 input = Input(shape=(timestep, input_dim))
-dae = input
+classifier = input
 
 
 '''ConvNN before putting into LSTM'''
 if input_dim > kernel_size:
-    dae = Reshape(target_shape=(timestep, input_dim, 1))(dae)
-    dae = TimeDistributed(Conv1D(16, kernel_size=kernel_size, data_format='channels_last', activation='relu'))(dae)
-    dae = TimeDistributed(Conv1D(32, kernel_size=kernel_size, data_format='channels_last', activation='relu'))(dae)
-    dae = TimeDistributed(Flatten(data_format='channels_last'))(dae)
+    classifier = Reshape(target_shape=(timestep, input_dim, 1))(classifier)
+    classifier = TimeDistributed(Conv1D(16, kernel_size=kernel_size, data_format='channels_last', activation='relu'))(classifier)
+    classifier = TimeDistributed(Conv1D(32, kernel_size=kernel_size, data_format='channels_last', activation='relu'))(classifier)
+    classifier = TimeDistributed(Flatten(data_format='channels_last'))(classifier)
 
 '''residual LSTM'''
 # layer_input = []
@@ -115,17 +138,17 @@ if input_dim > kernel_size:
 
 
 '''bidirectional LSTM'''
-o1 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(dae)
+o1 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(classifier)
 o2 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o1)
-
+o2 = Add()([o1, o2])
 o3 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o2)
-o4 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o3)
+o3 = Add()([o1, o2, o3])
 
 '''attention model'''
-o5 = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o4)
-o6 = Multiply()([o4, o5])
+o4 = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o3)
+o5 = Multiply()([o3, o4])
 
-dae = o6
+classifier = o5
 
 #
 # o3 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(Add()([o1, o2]))
@@ -139,15 +162,15 @@ dae = o6
 
 
 if input_dim > kernel_size:
-    dae = TimeDistributed(Dense(160, activation='linear'))(dae)
+    classifier = TimeDistributed(Dense(160, activation='linear'))(classifier)
 
-dae = TimeDistributed(Dense(filter_size*2, activation='relu'))(dae)
-dae = TimeDistributed(Dense(1, activation='linear'))(dae)
+classifier = TimeDistributed(Dense(filter_size*2, activation='relu'))(classifier)
+classifier = TimeDistributed(Dense(6, activation='softmax'))(classifier)
 
-model = Model(input, dae)
+model = Model(input, classifier)
 
 print(model.summary())
-model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0), metrics=['mae'], loss='mean_squared_error')
+model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0), metrics=['accuracy'], loss='categorical_crossentropy')
 
 hist = model.fit(x_train[:300], y_train[:300], validation_data=(x_train[300:400], y_train[300:400]), batch_size=batch_size, epochs=epochs, verbose=1)
 
@@ -156,13 +179,13 @@ expected = y_train[400:]
 
 # '''save the result'''
 date_str = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
-model.save('dae_ecgsim' + date_str + '.h5')
-hist_name = 'dae_ecgsim_hist_' + date_str +'.dat'
+model.save('classify_ecgsim' + date_str + '.h5')
+hist_name = 'classify_ecgsim_hist_' + date_str +'.dat'
 pickle.dump(hist, open(hist_name, 'wb'))
 
 
-import matplotlib.pyplot as plt
-plot_idx = 20
-plt.plot(predicted[plot_idx])
-plt.plot(expected[plot_idx])
-plt.plot(x_train[plot_idx])
+# import matplotlib.pyplot as plt
+# plot_idx = 20
+# plt.plot(predicted[plot_idx])
+# plt.plot(expected[plot_idx])
+# plt.plot(x_train[plot_idx])
