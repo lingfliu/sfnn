@@ -2,7 +2,7 @@ from keras.layers import ConvLSTM2D, Dense, Conv1D, TimeDistributed, BatchNormal
 from keras.layers import Bidirectional, CuDNNLSTM, Dropout, LSTM, Add, Conv2D, Multiply
 from keras.layers import Reshape, Input, Flatten, BatchNormalization
 from keras.models import Model
-from keras.utils import  to_categorical
+from keras.utils import to_categorical
 
 import keras
 
@@ -63,7 +63,7 @@ for idxx in idx:
     label = np.ones(np.shape(idxx))
     label_start = -1
     for m in range(len(idxx)):
-        if idxx[m] > 0:
+        if idxx[m] >= 0:
             if idxx[m] == 4:
                 label_start = -1
             else:
@@ -71,12 +71,19 @@ for idxx in idx:
         else:
             pass
 
-        label[m] = label_start
+        if idxx[m] == 4:
+            label[m] = idxx[m]
+        else:
+            label[m] = label_start
 
     labels.append(label)
 
 
 
+truth = []
+for sig in sigs:
+    tr = np.array([sig[i*stride+input_dim//2-output_dim//2:i*stride+input_dim//2 - output_dim//2 + output_dim] for i in range( (len(sig)-input_dim)//stride )])
+    truth.append(tr)
 
 y_train = []
 for label in labels:
@@ -139,13 +146,18 @@ if input_dim > kernel_size:
 
 '''bidirectional LSTM'''
 o1 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(classifier)
+o1 = Dropout(0.2)(o1)
 o2 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o1)
 o2 = Add()([o1, o2])
+o2 = Dropout(0.2)(o2)
+
 o3 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o2)
 o3 = Add()([o1, o2, o3])
+o3 = Dropout(0.2)(o3)
 
 '''attention model'''
-o4 = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o3)
+o4 = TimeDistributed(Dense(filter_size*2, activation='relu'))(o3)
+o4 = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o4)
 o5 = Multiply()([o3, o4])
 
 classifier = o5
@@ -174,8 +186,10 @@ model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None
 
 hist = model.fit(x_train[:300], y_train[:300], validation_data=(x_train[300:400], y_train[300:400]), batch_size=batch_size, epochs=epochs, verbose=1)
 
-predicted = model.predict(x_train[400:])
+tested = x_train[400:]
+sig_truth = truth[400:]
 expected = y_train[400:]
+predicted = model.predict(tested)
 
 # '''save the result'''
 date_str = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
@@ -184,8 +198,13 @@ hist_name = 'classify_ecgsim_hist_' + date_str +'.dat'
 pickle.dump(hist, open(hist_name, 'wb'))
 
 
-# import matplotlib.pyplot as plt
-# plot_idx = 20
-# plt.plot(predicted[plot_idx])
-# plt.plot(expected[plot_idx])
-# plt.plot(x_train[plot_idx])
+import matplotlib.pyplot as plt
+plot_idx = 30
+
+pr = [np.argmax(p) for p in predicted[plot_idx]]
+ex = [np.argmax(p) for p in expected[plot_idx]]
+plt.plot(pr)
+plt.plot(ex)
+plt.plot(tested[plot_idx])
+plt.plot(sig_truth[plot_idx])
+plt.plot(idx[400+plot_idx])
