@@ -117,18 +117,26 @@ if input_dim > kernel_size:
 '''bidirectional LSTM'''
 o1 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(dae)
 o2 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o1)
+o2 = Add()([o1, o2])
 o3 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o2)
+o3 = Add()([o1, o2, o3])
 
-'''attention model'''
-o3a = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o3)
-o3v = Multiply()([o3a, dae])
+# '''attention model'''
+# o3a = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o3)
+# o3v = Multiply()([o3a, o1])
 
-o4 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o3v)
+o4 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o3)
+o4 = Add()([o3, o4])
 o5 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o4)
+o5 = Add()([o3, o4, o5])
+
 o6 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o5)
+
 '''attention model'''
-o6a = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o6)
-o6v = Multiply()([o6a, o3v])
+o6 = TimeDistributed(Dense(filter_size*2, activation='relu'))(o6)
+o6 = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o6)
+
+o6v = Multiply()([o6, o5])
 
 dae = o6v
 
@@ -152,7 +160,7 @@ dae = TimeDistributed(Dense(1, activation='linear'))(dae)
 model = Model(input, dae)
 
 print(model.summary())
-model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0), metrics=['mae'], loss='mean_squared_error')
+model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0), metrics=['mae'], loss='logcosh')
 
 hist = model.fit(x_train[:300], y_train[:300], validation_data=(x_train[300:400], y_train[300:400]), batch_size=batch_size, epochs=epochs, verbose=1)
 

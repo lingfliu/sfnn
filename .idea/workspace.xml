@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114370e7-b9dc-4791-bfd0-4c932b78391b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/classify_ecgsim.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dae_ecgsim.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dae_ecgsim_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dae_ecgsim_showcase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multiprocess_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/playground/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/afnn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/afnn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_lstm_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/cnn_lstm_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conv_lstm_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/conv_lstm_example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecg_convlstm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecg_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/ecg_simulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lstm_ae_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/lstm_ae_example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lstm_dae_simu.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/lstm_dae_simu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/point_lstm_simu.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/point_lstm_simu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sig_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sig_simulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stateful_lstm_dae_simu.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/stateful_lstm_dae_simu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/tensorflow_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theano_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/theano_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcnn_lstm_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground/wcnn_lstm_playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dae_ecgsim.py" beforeDir="false" afterPath="$PROJECT_DIR$/dae_ecgsim.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
+            <state relative-caret-position="447">
+              <caret line="162" column="123" selection-start-line="162" selection-start-column="123" selection-end-line="162" selection-end-column="123" />
               <folding>
                 <element signature="e#0#115#0" expanded="true" />
               </folding>
@@ -404,12 +380,12 @@
       <workItem from="1548164213269" duration="4077000" />
       <workItem from="1548200079994" duration="25852000" />
       <workItem from="1548300810277" duration="14320000" />
-      <workItem from="1548730082341" duration="6209000" />
+      <workItem from="1548730082341" duration="13268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166676000" />
+    <option name="totallyTimeSpent" value="173735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -807,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
+        <state relative-caret-position="447">
+          <caret line="162" column="123" selection-start-line="162" selection-start-column="123" selection-end-line="162" selection-end-column="123" />
           <folding>
             <element signature="e#0#115#0" expanded="true" />
           </folding>
