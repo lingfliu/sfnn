@@ -4,7 +4,7 @@ from keras.models import Sequential
 import keras
 from keras.datasets import mnist
 
-import ecg_simulator
+from playground import ecg_simulator
 
 import numpy as np
 from matplotlib import pyplot as plt

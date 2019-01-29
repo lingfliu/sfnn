@@ -1,10 +1,11 @@
 from keras.layers import Conv1D, LSTM, Bidirectional, UpSampling1D, Flatten, ConvLSTM2D, Reshape, MaxPooling2D, MaxPooling1D, MaxPooling3D, UpSampling2D
+from keras.layers import CuDNNLSTM
 from keras.layers import TimeDistributed
 from keras.models import Sequential
 import keras
 from keras.datasets import mnist
 
-import ecg_simulator
+from playground import ecg_simulator
 
 import numpy as np
 from matplotlib import pyplot as plt
@@ -37,7 +38,7 @@ x_train = np.array([sig[idx:idx+input_dim] for idx in range(len(sig)-input_dim)]
 x_train_decoded = np.array([[sig[idx+input_dim//2]] for idx in range(input_dim//2, len(sig)-input_dim//2)])
 
 idx = 0
-x_noisy  = []
+x_noisy = []
 x_decoded = []
 
 isEnd = False

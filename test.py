@@ -98,7 +98,20 @@ print(np.remainder(a, 2*sp.pi))
 # print(a[30//2::-1])
 print(sp.log2(2))
 import ecgsyn
-(a,b) = ecgsyn.ecgsyn(sfecg=250, anoise=1, N=100)
-plt.plot(a[:1000])
-plt.plot(b[:1000])
-plt.show()
+(a,b) = ecgsyn.ecgsyn(sfecg=250, anoise=0, N=100)
+# plt.plot(a[:1000])
+# plt.plot(b[:1000])
+# plt.show()
+
+
+# import pickle
+# pickle.dump((a,b), open('test.dat','wb'))
+# del a,b
+# (a,b) = pickle.load(open('test.dat','rb'))
+# plt.plot(a[:5000])
+# plt.plot(b[:5000])
+# plt.show()
+
+import datetime
+
+print(datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))

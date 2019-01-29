@@ -6,7 +6,7 @@ import numpy as np
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
-import ecg_simulator
+from playground import ecg_simulator
 import matplotlib.pyplot as plt
 
 import tensorflow as tf
@@ -71,6 +71,7 @@ enc = Bidirectional(LSTM(filter_size, return_sequences=True))(enc)
 enc = TimeDistributed(Dense(1, activation='linear'))(enc)
 
 dae = Model(input_sig, enc)
+print(dae.summary())
 
 dae.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9), loss='mean_squared_error', metrics=['accuracy'])
 dae.fit(x_train[:500], x_train_decoded[:500], validation_data=(x_train[500:800], x_train_decoded[500:800]), batch_size=batch_size, epochs=epochs, verbose=1)

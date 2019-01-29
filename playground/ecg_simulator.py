@@ -83,17 +83,3 @@ def add_transcient_noise(sig, amp, snr, noise_len, noise_baseline):
     return sig_noisy
 
 
-
-#
-# y = simu_rythm_sig(3000, 0, 1)
-#
-# add_bg_gaussian_noise(y, 1, -10)
-#
-# for i in range(10):
-#     add_transcient_noise(y, 1, -5, 500, np.random.random())
-#
-# plt.plot(y)
-#
-# plt.show()
-
-

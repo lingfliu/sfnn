@@ -45,6 +45,8 @@ def make_lstm():
     encoder = Model(inputs, encoded)
 
     sequence_autoencoder.compile(loss='mean_squared_error', optimizer='adam')
+    print(sequence_autoencoder.summary())
+    print(encoder.summary())
     return sequence_autoencoder, encoder
 
 
@@ -53,7 +55,7 @@ print(sequence_autoencoder.summary())
 
 for epoch in range(n_epoch):
     x_train = make_random_batch(n_batch)
-    sequence_autoencoder.fit(x_train, x_train, epochs=1, steps_per_epoch=10, verbose=2)
+    sequence_autoencoder.fit(x_train, x_train, epochs=1, steps_per_epoch=10, verbose=1)
 
 predicted = sequence_autoencoder.predict(x_train[0:1])
 expected = x_train[0:1]
