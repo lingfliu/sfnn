@@ -44,8 +44,8 @@ stride = output_dim
 timestep = 0
 
 # neural params
-batch_size = 20
-epochs = 100
+batch_size = 40
+epochs = 240
 filter_size = 80
 kernel_size = 4
 dropout = 0.2
@@ -118,8 +118,12 @@ if input_dim > kernel_size:
 o1 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(dae)
 o2 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o1)
 o2 = Add()([o1, o2])
+o2 = Dropout(0.2)(o2)
+o2 = BatchNormalization()(o2)
 o3 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o2)
 o3 = Add()([o1, o2, o3])
+o3 = Dropout(0.2)(o3)
+o3 = BatchNormalization()(o3)
 
 # '''attention model'''
 # o3a = TimeDistributed(Dense(filter_size*2, activation='softmax'))(o3)
@@ -127,8 +131,13 @@ o3 = Add()([o1, o2, o3])
 
 o4 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o3)
 o4 = Add()([o3, o4])
+o4 = Dropout(0.2)(o4)
+o4 = BatchNormalization()(o4)
+
 o5 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o4)
 o5 = Add()([o3, o4, o5])
+o5 = Dropout(0.2)(o5)
+o5 = BatchNormalization()(o5)
 
 o6 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o5)
 

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114370e7-b9dc-4791-bfd0-4c932b78391b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/afnn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/afnn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multitask_ecgsim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classify_ecgsim.py" beforeDir="false" afterPath="$PROJECT_DIR$/classify_ecgsim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dae_ecgsim.py" beforeDir="false" afterPath="$PROJECT_DIR$/dae_ecgsim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wfdb_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/wfdb_tools.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +16,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/sfnn$multiprocess_test.coverage" NAME="multiprocess_test Coverage Results" MODIFIED="1548076313353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sfnn$classify_ecgsim.coverage" NAME="classify_ecgsim Coverage Results" MODIFIED="1548764416656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sfnn$classify_ecgsim.coverage" NAME="classify_ecgsim Coverage Results" MODIFIED="1548820556201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sfnn$lstm_ae_example.coverage" NAME="lstm_ae_example Coverage Results" MODIFIED="1548160585721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/playground" />
     <SUITE FILE_PATH="coverage/sfnn$wcnn_lstm_playground.coverage" NAME="wcnn_lstm_playground Coverage Results" MODIFIED="1545794402382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sfnn$ecg_simulator.coverage" NAME="ecg_simulator Coverage Results" MODIFIED="1545566731333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -45,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="-2464">
+              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding>
                 <element signature="e#0#115#0" expanded="true" />
               </folding>
@@ -57,14 +58,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+            <state relative-caret-position="168">
+              <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
               <folding>
                 <element signature="e#0#115#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wfdb_tools.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/multitask_ecgsim.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1490">
+              <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -115,9 +134,11 @@
         <option value="$PROJECT_DIR$/playground/lstm_ae_example.py" />
         <option value="$PROJECT_DIR$/playground/point_lstm_simu.py" />
         <option value="$PROJECT_DIR$/sig_simulator.py" />
-        <option value="$PROJECT_DIR$/dae_ecgsim.py" />
         <option value="$PROJECT_DIR$/dae_ecgsim_generator.py" />
+        <option value="$PROJECT_DIR$/multitask_ecgsim.py" />
         <option value="$PROJECT_DIR$/classify_ecgsim.py" />
+        <option value="$PROJECT_DIR$/wfdb_tools.py" />
+        <option value="$PROJECT_DIR$/dae_ecgsim.py" />
       </list>
     </option>
   </component>
@@ -165,12 +186,12 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\git\sfnn\playground" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\git\sfnn" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git\sfnn\playground" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -185,7 +206,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.classify_ecgsim">
+  <component name="RunManager" selected="Python.dae_ecgsim">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,9 +252,6 @@
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -271,20 +289,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lstm_ae_example" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="multitask_ecgsim" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/playground" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/playground/lstm_ae_example.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/multitask_ecgsim.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -293,20 +308,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="point_lstm_simu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="wfdb_tools" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/playground" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/playground/point_lstm_simu.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wfdb_tools.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -318,17 +330,17 @@
     <list>
       <item itemvalue="Python.dae_ecgsim" />
       <item itemvalue="Python.dae_ecgsim_generator" />
-      <item itemvalue="Python.lstm_ae_example" />
-      <item itemvalue="Python.point_lstm_simu" />
       <item itemvalue="Python.classify_ecgsim" />
+      <item itemvalue="Python.multitask_ecgsim" />
+      <item itemvalue="Python.wfdb_tools" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.classify_ecgsim" />
-        <item itemvalue="Python.dae_ecgsim_generator" />
         <item itemvalue="Python.dae_ecgsim" />
-        <item itemvalue="Python.point_lstm_simu" />
-        <item itemvalue="Python.lstm_ae_example" />
+        <item itemvalue="Python.wfdb_tools" />
+        <item itemvalue="Python.classify_ecgsim" />
+        <item itemvalue="Python.multitask_ecgsim" />
+        <item itemvalue="Python.dae_ecgsim_generator" />
       </list>
     </recent_temporary>
   </component>
@@ -368,12 +380,12 @@
       <workItem from="1548730082341" duration="13268000" />
       <workItem from="1548750008870" duration="37000" />
       <workItem from="1548750378124" duration="3774000" />
-      <workItem from="1548765713920" duration="5049000" />
+      <workItem from="1548765713920" duration="39672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182595000" />
+    <option name="totallyTimeSpent" value="217218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,7 +398,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49280575" visible="true" weight="0.19402985" />
       <window_info id="Structure" order="1" sideWeight="0.5005931" side_tool="true" weight="0.1640049" />
@@ -394,16 +405,16 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32924107" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4214876" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49979484" weight="0.3931523" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49979484" weight="0.39209402" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32781065" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32742316" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50020516" side_tool="true" weight="0.3965245" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.47542736" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32821724" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.2724359" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.49946696" visible="true" weight="0.38675213" />
       <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32938388" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -412,6 +423,31 @@
       <window_info anchor="right" id="Database" order="4" weight="0.32991382" />
       <window_info anchor="right" x="0" y="0" width="590" height="1135" id="Documentation" order="5" sideWeight="0.50121653" side_tool="true" visible="true" weight="0.3296875" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49280575" weight="0.19402985" />
+      <window_info id="Structure" order="1" sideWeight="0.5005931" side_tool="true" weight="0.1640049" />
+      <window_info id="Favorites" order="2" sideWeight="0.5071942" side_tool="true" weight="0.16646191" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32924107" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4214876" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49979484" weight="0.39209402" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32781065" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32742316" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50020516" side_tool="true" weight="0.3965245" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32821724" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.47542736" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32938388" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49878347" weight="0.75" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32991382" />
+      <window_info anchor="right" x="0" y="0" width="590" height="1135" id="Documentation" order="5" sideWeight="0.50121653" side_tool="true" visible="true" weight="0.3296875" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -433,20 +469,44 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="np.shape(y_train)" language="Python" />
-        <watch expression="np.shape(x_train)" language="Python" />
-        <watch expression="np.shape(y)" language="Python" />
-        <watch expression="np.shape(y_train)" language="Python" />
-        <watch expression="np.shape(labels)" language="Python" />
-        <watch expression="np.shape(label)" language="Python" />
-        <watch expression="(len(label)-input_dim)//stride" language="Python" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>plt.plot(idx[0])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.show()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.plot(labels[0])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.plot(truth[0])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.plot(</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.plot(label)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>import matplotlib.pyplot as plt</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>np.shape(y_train)</expression-string>
         <language-id>Python</language-id>
@@ -462,40 +522,9 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>np.shape(labels)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.shape(y)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.shape(x_train)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>len(y[1])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>y[1]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>y[0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/mpmath/__init__.py" />
     <entry file="file://$PROJECT_DIR$/nn.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/models.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/layers/convolutional_recurrent.py" />
@@ -534,15 +563,6 @@
     <entry file="file://$USER_HOME$/anaconda3/envs/ml2/lib/python2.7/site-packages/keras/utils/generic_utils.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/ml2/lib/python2.7/site-packages/keras/engine/training_utils.py" />
     <entry file="file://$PROJECT_DIR$/test.jpg" />
-    <entry file="file://$PROJECT_DIR$/wfdb_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playground/wcnn_lstm_playground.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="777">
@@ -711,20 +731,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
+    <entry file="file://$PROJECT_DIR$/multitask_ecgsim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="-1490">
+          <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wfdb_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
           <folding>
             <element signature="e#0#115#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
+    <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+        <state relative-caret-position="-2464">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding>
             <element signature="e#0#115#0" expanded="true" />
           </folding>
