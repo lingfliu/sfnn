@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114370e7-b9dc-4791-bfd0-4c932b78391b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/multitask_ecgsim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classify_ecgsim.py" beforeDir="false" afterPath="$PROJECT_DIR$/classify_ecgsim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dae_ecgsim.py" beforeDir="false" afterPath="$PROJECT_DIR$/dae_ecgsim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wfdb_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/wfdb_tools.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,10 +42,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2464">
+            <state relative-caret-position="1288">
               <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding>
                 <element signature="e#0#115#0" expanded="true" />
@@ -70,11 +66,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wfdb_tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="343">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,8 +136,8 @@
         <option value="$PROJECT_DIR$/dae_ecgsim_generator.py" />
         <option value="$PROJECT_DIR$/multitask_ecgsim.py" />
         <option value="$PROJECT_DIR$/classify_ecgsim.py" />
-        <option value="$PROJECT_DIR$/wfdb_tools.py" />
         <option value="$PROJECT_DIR$/dae_ecgsim.py" />
+        <option value="$PROJECT_DIR$/wfdb_tools.py" />
       </list>
     </option>
   </component>
@@ -159,11 +158,6 @@
             <path>
               <item name="sfnn" type="b2602c69:ProjectViewProjectNode" />
               <item name="sfnn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sfnn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sfnn" type="462c0819:PsiDirectoryNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -206,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dae_ecgsim">
+  <component name="RunManager" selected="Python.wfdb_tools">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="afnn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -336,8 +330,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dae_ecgsim" />
         <item itemvalue="Python.wfdb_tools" />
+        <item itemvalue="Python.dae_ecgsim" />
         <item itemvalue="Python.classify_ecgsim" />
         <item itemvalue="Python.multitask_ecgsim" />
         <item itemvalue="Python.dae_ecgsim_generator" />
@@ -380,12 +374,12 @@
       <workItem from="1548730082341" duration="13268000" />
       <workItem from="1548750008870" duration="37000" />
       <workItem from="1548750378124" duration="3774000" />
-      <workItem from="1548765713920" duration="39672000" />
+      <workItem from="1548765713920" duration="48649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217218000" />
+    <option name="totallyTimeSpent" value="226195000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -525,8 +519,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nn.py" />
-    <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/models.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/keras/layers/convolutional_recurrent.py" />
     <entry file="file://$PROJECT_DIR$/.main.py.swp" />
     <entry file="file://$USER_HOME$/anaconda3/envs/keras_general/lib/python3.6/site-packages/mpmath/__init__.py" />
@@ -738,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wfdb_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classify_ecgsim.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -757,10 +742,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dae_ecgsim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2464">
+        <state relative-caret-position="1288">
           <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding>
             <element signature="e#0#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/multiprocessing/spawn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/ml/Lib/site-packages/wfdb/io/record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="1673" selection-start-line="1673" selection-end-line="1673" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wfdb_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
