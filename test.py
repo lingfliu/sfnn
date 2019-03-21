@@ -116,4 +116,19 @@ import numpy as np
 #
 # print(datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))
 
-import scipy.i
+import scipy.io as sio
+import matplotlib.pyplot as plt
+
+mat_data = sio.matlab.loadmat('icbeb2019/data/data_00008')
+ecg = mat_data['ecg']
+mat_label = sio.matlab.loadmat('icbeb2019/ref/R_00008')
+r_list = mat_label['R_peak']
+label = np.zeros(np.shape(ecg))
+for r in r_list:
+    label[r-1] = 1
+
+plt.plot(ecg)
+plt.plot(label)
+plt.show()
+
+
