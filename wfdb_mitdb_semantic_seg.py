@@ -38,32 +38,32 @@ import datetime
 
 fs = 360 # sampling rate of mitdb
 
-# '''load training data and shuffle'''
-# (input, label) = prepare_training_set(set_len=5000)
-# paired = []
-# for idx in range(len(input)):
-#     paired.append((input[idx], label[idx]))
-# np.random.shuffle(paired)
-# input = []
-# label = []
-# for (i, l) in paired:
-#     input.append(i)
-#     label.append(l)
-#
-# for lb in label:
-#     idx = 0
-#     while idx < len(lb):
-#         if lb[idx] == 1:
-#             for idx2 in range(idx-10, idx+10, 1):
-#                 if idx2 >= 0 and idx2 <= len(lb)-1:
-#                     lb[idx2] = 1
-#             idx += 10
-#         else:
-#             idx += 1
-#
-#
-# '''save tmp data'''
-# pickle.dump((input, label), open('test.tmp', 'wb'))
+'''load training data and shuffle'''
+(input, label) = prepare_training_set(set_len=5000)
+paired = []
+for idx in range(len(input)):
+    paired.append((input[idx], label[idx]))
+np.random.shuffle(paired)
+input = []
+label = []
+for (i, l) in paired:
+    input.append(i)
+    label.append(l)
+
+for lb in label:
+    idx = 0
+    while idx < len(lb):
+        if lb[idx] == 1:
+            for idx2 in range(idx-10, idx+10, 1):
+                if idx2 >= 0 and idx2 <= len(lb)-1:
+                    lb[idx2] = 1
+            idx += 10
+        else:
+            idx += 1
+
+
+'''save tmp data'''
+pickle.dump((input, label), open('test.tmp', 'wb'))
 
 '''load tmp data'''
 (input, label) = pickle.load(open('test.tmp', 'rb'))
@@ -106,16 +106,16 @@ input = Input(shape=(timestep, input_dim))
 classifier = input
 
 '''bidirectional LSTM'''
-o1 = Bidirectional(LSTM(filter_size, return_sequences=True))(classifier)
+o1 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(classifier)
 o1 = Dropout(0.2)(o1)
 o1 = BatchNormalization()(o1)
 
-o2 = Bidirectional(LSTM(filter_size, return_sequences=True))(o1)
+o2 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o1)
 o2 = Add()([o1, o2])
 o2 = Dropout(0.2)(o2)
 o2 = BatchNormalization()(o2)
 
-o3 = Bidirectional(LSTM(filter_size, return_sequences=True))(o2)
+o3 = Bidirectional(CuDNNLSTM(filter_size, return_sequences=True))(o2)
 o3 = Add()([o1, o2, o3])
 o3 = Dropout(0.2)(o3)
 o3 = BatchNormalization()(o3)
