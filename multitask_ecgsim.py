@@ -47,7 +47,7 @@ stride = output_dim
 timestep = 0
 
 # neural params
-batch_size = 20
+batch_size = 40
 epochs = 200
 filter_size = 80
 kernel_size = 4
@@ -88,13 +88,14 @@ for idxx in idx:
 
     labels.append(label)
 
+# training y for dae
 truth = []
 for sig in sigs:
     tr = np.array([sig[i*stride+input_dim//2-output_dim//2:i*stride+input_dim//2 - output_dim//2 + output_dim] for i in range( (len(sig)-input_dim)//stride )])
     truth.append(tr)
 
+# training y for classify
 label_train = []
-labels = idx
 for label in labels:
     y = np.array([label[i*stride+input_dim//2-output_dim//2:i*stride+input_dim//2 - output_dim//2 + output_dim] for i in range( (len(label)-input_dim)//stride )])
     y = to_categorical(y, num_classes=6)
@@ -175,10 +176,14 @@ print(classifier_model.summary())
 
 dae_model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0), metrics=['mae'], loss='logcosh')
 
-dae.trainable = False
+# train the dae model and freeze the weights of the first 3 LSTM layers
+for layer in dae_model.layers:
+    layer.trainable = False
 classifier_model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0), metrics=['accuracy', 'categorical_accuracy'], loss='categorical_crossentropy')
 
 hist_dae = dae_model.fit(x_train[:300], truth[:300], validation_data=(x_train[300:400], truth[300:400]), batch_size=batch_size, epochs=epochs, verbose=1)
+
+
 hist_classifier = classifier_model.fit(x_train[:300], label_train[:300], validation_data=(x_train[300:400], label_train[300:400]), batch_size=batch_size, epochs=epochs, verbose=1)
 
 idx_ref = idx[400:]
