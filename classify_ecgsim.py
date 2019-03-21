@@ -47,8 +47,8 @@ stride = output_dim
 timestep = 0
 
 # neural params
-batch_size = 60
-epochs = 300
+batch_size = 40
+epochs = 200
 filter_size = 80
 kernel_size = 4
 dropout = 0.2
