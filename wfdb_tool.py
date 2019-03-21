@@ -82,31 +82,33 @@ def prepare_training_set(set_len=5000):
             d = data[idx:idx+set_len]
             input.append(d)
 
-            lb = np.zeros(np.shape(d))
+            lb = []
+            for idx2 in range(len(d)):
+                lb.append(0)
+
             anno_idx = [ai for ai in filter(lambda x:x-idx<set_len and x-idx>=0, anno)]
 
             for idx2 in anno_idx:
-                lb[idx2-idx] += 1
+                lb[idx2-idx] = 1
 
             label.append(lb)
 
             idx += set_len
 
-    a = 0
+    return (input, label)
 
-
-
-def main():
-    prepare_training_set()
-
-
-if __name__ == '__main__':
-
-    # dl_all_db()
-    # dl_dbs(['ltdb'])
-    # data = '210'
-    # record = wfdb.rdrecord('wfdb/mitdb/'+data)
-    # anno = wfdb.rdann('wfdb/mitdb/'+data, 'atr')
-    # wfdb.plot_wfdb(record=record, annotation=anno, title='mitdb-100')
-    main()
+#
+# def main():
+#     (input, label) = prepare_training_set()
+#
+#
+# if __name__ == '__main__':
+#
+#     # dl_all_db()
+#     # dl_dbs(['ltdb'])
+#     # data = '210'
+#     # record = wfdb.rdrecord('wfdb/mitdb/'+data)
+#     # anno = wfdb.rdann('wfdb/mitdb/'+data, 'atr')
+#     # wfdb.plot_wfdb(record=record, annotation=anno, title='mitdb-100')
+#     main()
 

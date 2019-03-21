@@ -111,3 +111,6 @@ venv.bak/
 # database
 db/
 wfdb/
+icbeb2019/
+
+*.tmp
