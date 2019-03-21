@@ -107,3 +107,10 @@ venv.bak/
 .h5
 *.dat
 *.h5
+
+# database
+db/
+wfdb/
+icbeb2019/
+
+*.tmp
