@@ -37,7 +37,7 @@ import pickle
 import datetime
 
 
-fs = 360 # sampling rate of mitdb
+fs = 500 # sampling rate of mitdb
 
 '''load training data and shuffle'''
 (input, label) = load_icbeb2019('icbeb2019')
@@ -56,7 +56,7 @@ for lb in label:
     while idx < len(lb):
         if lb[idx] == 1:
             for idx2 in range(idx-20, idx+20, 1):
-                if idx2 >= 0 and idx2 <= len(lb)-1:
+                if 0 <= idx2 <= len(lb)-1:
                     lb[idx2] = 1
             idx += 10
         else:
@@ -67,7 +67,7 @@ for lb in label:
 pickle.dump((input, label), open('icbeb_test.tmp', 'wb'))
 
 '''load tmp data'''
-(input, label) = pickle.load(open('icbeb_test.tmp', 'rb'))
+(data, label) = pickle.load(open('icbeb_test.tmp', 'rb'))
 '''global parameters'''
 input_dim = 1
 output_dim = 1
@@ -80,7 +80,7 @@ timestep = 0
 
 # hyper params
 batch_size = 20
-epochs = 500
+epochs = 300
 filter_size = 60
 kernel_size = 4
 dropout = 0.2
@@ -88,7 +88,7 @@ dropout = 0.2
 
 # stagging the signal
 x_train = []
-for dat in input:
+for dat in data:
     seq = np.array([dat[i*stride:i*stride+input_dim] for i in range((len(dat)-input_dim)//stride)])
     x_train.append(seq)
 
@@ -135,11 +135,11 @@ print(model.summary())
 
 model.compile(optimizer=keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=None, decay=0.0), metrics=['accuracy', 'categorical_accuracy'], loss='categorical_crossentropy')
 
-hist = model.fit(x_train[:4000], y_train[:4000], validation_data=(x_train[4000:6000], y_train[4000:6000]), batch_size=batch_size, epochs=epochs, verbose=1)
+hist = model.fit(x_train[:1500], y_train[:1500], validation_data=(x_train[1500:1800], y_train[1500:1800]), batch_size=batch_size, epochs=epochs, verbose=1)
 
 
-tested = x_train[6000:]
-expected = y_train[6000:]
+tested = x_train[1800:]
+expected = y_train[1800:]
 predicted = model.predict(tested)
 
 # '''save the results'''

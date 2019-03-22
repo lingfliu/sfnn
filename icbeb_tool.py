@@ -16,10 +16,10 @@ def load_icbeb2019(db_dir='icbeb2019'):
     for root, dirs, files in os.walk(ref_dir):
         [ref_file_list.append(f) for f in files]
 
-
     ecg_list = []
     label_list = []
     for name in dat_name:
+        print('loading data ', name)
         dat_file = 'data_' + name
 
         mat_data = sio.matlab.loadmat(os.path.join(dat_dir, dat_file))
@@ -32,9 +32,8 @@ def load_icbeb2019(db_dir='icbeb2019'):
         for r in r_list:
             label[r-1] = 1
 
-
-        ecg_list.append(ecg)
-        label_list.append(label)
+        ecg_list.append(ecg[:,0])
+        label_list.append(label[:,0])
 
     return (ecg_list, label_list)
 
