@@ -39,32 +39,33 @@ import datetime
 
 fs = 500 # sampling rate of mitdb
 
-'''load training data and shuffle'''
-(input, label) = load_icbeb2019('icbeb2019')
-paired = []
-for idx in range(len(input)):
-    paired.append((input[idx], label[idx]))
-np.random.shuffle(paired)
-input = []
-label = []
-for (i, l) in paired:
-    input.append(i)
-    label.append(l)
-
-for lb in label:
-    idx = 0
-    while idx < len(lb):
-        if lb[idx] == 1:
-            for idx2 in range(idx-20, idx+20, 1):
-                if 0 <= idx2 <= len(lb)-1:
-                    lb[idx2] = 1
-            idx += 10
-        else:
-            idx += 1
-
-
-'''save tmp data'''
-pickle.dump((input, label), open('icbeb_test.tmp', 'wb'))
+# '''load training data and shuffle'''
+# (input, label) = load_icbeb2019('icbeb2019')
+# paired = []
+# for idx in range(len(input)):
+#     paired.append((input[idx], label[idx]))
+# np.random.shuffle(paired)
+# input = []
+# label_raw = []
+# for (i, l) in paired:
+#     input.append(i)
+#     label_raw.append(l)
+#
+# label = []
+# for lb in label_raw:
+#     lb_ex = np.zeros(np.shape(lb))
+#     idx = 0
+#     while idx < len(lb):
+#         if lb[idx] == 1:
+#             for idx2 in range(idx-40, idx+40, 1):
+#                 if 0 <= idx2 <= len(lb)-1:
+#                     lb_ex[idx2] = 1
+#         idx += 1
+#
+#     label.append(lb_ex)
+#
+# '''save tmp data'''
+# pickle.dump((input, label), open('icbeb_test.tmp', 'wb'))
 
 '''load tmp data'''
 (data, label) = pickle.load(open('icbeb_test.tmp', 'rb'))
@@ -79,9 +80,9 @@ stride = output_dim
 timestep = 0
 
 # hyper params
-batch_size = 20
-epochs = 300
-filter_size = 60
+batch_size = 40
+epochs = 400
+filter_size = 80
 kernel_size = 4
 dropout = 0.2
 
@@ -144,9 +145,9 @@ predicted = model.predict(tested)
 
 # '''save the results'''
 date_str = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
-model.save('wfdb_semantic_seg_' + date_str + '.h5')
-hist_name = 'wfdb_semantic_seg_' + date_str +'.hist'
-dat_name = 'wfdb_semantic_seg_' + date_str + '.dat'
+model.save('icbeb2019_semantic_seg_' + date_str + '.h5')
+hist_name = 'icbeb2019_semantic_seg_' + date_str +'.hist'
+dat_name = 'icbeb2019_semantic_seg_' + date_str + '.dat'
 pickle.dump(hist, open(hist_name, 'wb'))
 pickle.dump((input, label), open(dat_name, 'wb'))
 

@@ -67,6 +67,17 @@ def load_database(database, db_dir):
 
         data_list.append(data.p_signal[:,0])
         anno_list.append(anno.sample)
+        anno_idx = np.zeros(np.shape(data.p_signal[:,0]))
+        anno_typ = np.zeros(np.shape(data.p_signal[:,0]))
+        for idx in anno.sample:
+            anno_idx[idx] = 1
+        # for idx in range(len(anno.sample)):
+        #     anno_typ[anno.sample[idx]] = anno.subtype[idx]
+        # plt.plot(data.p_signal[:,0])
+        # plt.plot(anno_idx)
+        # plt.plot(anno_typ)
+        # plt.show()
+        # plt.legend(['signal', 'anno_idx', 'anno_typ'])
 
     return (data_list, anno_list)
 

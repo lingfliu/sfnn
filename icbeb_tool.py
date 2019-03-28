@@ -2,6 +2,29 @@ import scipy.io as sio
 import numpy as np
 import os
 
+def load_icbeb2018(training_set=[1,2,3], db_dir='icbeb2018'):
+    root_dir = os.path.join(os.getcwd(), db_dir)
+
+    file_list = []
+    dat_list = []
+    label_list = []
+    for idx in training_set:
+        if idx == 1:
+            training_set_dir = os.path.join(root_dir, 'TrainingSet1')
+        elif idx == 2:
+            training_set_dir = os.path.join(root_dir, 'TrainingSet2')
+        elif idx == 3:
+            training_set_dir = os.path.join(root_dir, 'TrainingSet3')
+
+        for root, dirs, files in os.walk(training_set_dir):
+            [file_list.append(f) for f in files]
+
+        for f in file_list:
+            mat_data = sio.matlab.loadmat(os.path.join(training_set_dir, f))
+            dat_list.append(mat_data['dat'])
+            label_list.append(mat_data['label'])
+
+
 
 def load_icbeb2019(db_dir='icbeb2019'):
     dat_dir = os.path.join(os.getcwd(), db_dir, 'data')

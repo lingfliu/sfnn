@@ -112,5 +112,9 @@ venv.bak/
 db/
 wfdb/
 icbeb2019/
+icbeb2018/
 
 *.tmp
+*.zip
+*.hist
+*.h5
