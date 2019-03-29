@@ -1,4 +1,4 @@
-from wfdb_tool import prepare_training_set
+from wfdb_tool import prepare_training_set_aha
 
 import keras
 from keras.utils import to_categorical
@@ -40,24 +40,12 @@ import pickle
 import datetime
 
 
-fs = 360  # sampling rate of mitdb
+fs = 250 # sampling rate of mitdb
 
-'''load tmp data'''
-(input, label_raw, label) = pickle.load(open('mitdb_500_qrs.dat', 'rb'))
+'''load training data and shuffle'''
+(input, label_raw, label_typ) = prepare_training_set_aha(set_len=5000)
 
-'''label expansion'''
-label = []
-'''label expansion'''
-for lb in label_raw:
-    idx = 0
-    lb_new = np.zeros(np.shape(lb))
-    while idx < len(lb):
-        if lb[idx] == 1:
-            for idx2 in range(idx-20, idx+20, 1):
-                if len(lb)-1 >= idx2 >= 0:
-                    lb_new[idx2] = 1
-        idx += 1
-    label.append(lb_new)
+plt.plot(input[0][:,0])
 
 '''global parameters'''
 input_dim = 5000

@@ -41,36 +41,39 @@ import datetime
 
 
 fs = 360  # sampling rate of mitdb
-
 '''load training data and shuffle'''
-(input, label_raw) = prepare_training_set(set_len=5000)
+(input, label_raw, label_typ_raw) = prepare_training_set(set_len=5000)
 paired = []
 for idx in range(len(input)):
-    paired.append((input[idx], label_raw[idx]))
+    paired.append((input[idx], label_raw[idx], label_typ_raw[idx]))
 np.random.shuffle(paired)
 input = []
 label_raw = []
-for (i, l) in paired:
+for (i, l, t) in paired:
     input.append(i)
     label_raw.append(l)
+    label_typ_raw.append(t)
 
+'''save tmp data'''
+pickle.dump((input, label_raw, label_typ_raw), open('mitdb_500_qrs.dat', 'wb'))
+
+'''load tmp data'''
+(input, label_raw, label) = pickle.load(open('mitdb_500_qrs.dat', 'rb'))
+
+'''label expansion'''
 label = []
+'''label expansion'''
 for lb in label_raw:
     idx = 0
     lb_new = np.zeros(np.shape(lb))
     while idx < len(lb):
         if lb[idx] == 1:
             for idx2 in range(idx-20, idx+20, 1):
-                if idx2 >= 0 and idx2 <= len(lb)-1:
+                if len(lb)-1 >= idx2 >= 0:
                     lb_new[idx2] = 1
         idx += 1
     label.append(lb_new)
 
-'''save tmp data'''
-pickle.dump((input, label_raw, label), open('wfdb_qrs.tmp', 'wb'))
-
-'''load tmp data'''
-(input, label_raw, label) = pickle.load(open('wfdb_qrs.tmp', 'rb'))
 '''global parameters'''
 input_dim = 1
 output_dim = 1
