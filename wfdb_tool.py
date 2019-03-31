@@ -74,11 +74,6 @@ def load_database(database, db_dir):
         anno_list.append(anno_idx)
         anno_typ_list.append(anno_typ)
 
-
-        # anno_idx = np.zeros(np.shape(data.p_signal[:,0]))
-        # for idx in anno.sample:
-        #     anno_idx[idx] = 1
-
         # '''test code'''
         # anno_typ = np.zeros(np.shape(data.p_signal[:,0]))
         # for idx in range(len(anno.sample)):
@@ -116,7 +111,7 @@ def prepare_training_set(set_len=5000):
         anno_typ_idx = resample(anno_typ_idx, 360, 500, method='label_str')
 
         idx = 0
-        while idx < len(data):
+        while idx+set_len < len(data):
             d = data[idx:idx+set_len]
             input.append(d)
 
@@ -167,18 +162,22 @@ def prepare_training_set_aha(set_len=5000, db_dir='wfdb/aha'):
         anno_r_idx = np.zeros(len(sig[:,0]))
         for idx in anno_r:
             anno_r_idx[idx] = 1
+        anno_typ = anno.subtype
+        anno_typ_idx = [''] * len(sig)
+        for idx in range(len(anno_r)):
+            anno_typ_idx[anno_r[idx]] = anno_typ[idx]
 
         # trunc the data
         sig = sig[anno_r[0]-20:]
         anno_r_idx = anno_r_idx[anno_r[0]-20:]
         anno_r = anno_r - (anno_r[0] + 20)
+        anno_typ_idx = anno_typ_idx[anno_r[0]-20:]
 
         # resample to 500Hz
         sig = resample(sig[:,0], 250, 500, method='linear')
         anno_r_idx = resample(anno_r_idx, 250, 500, method='label')
+        anno_typ_idx = resample(anno_typ_idx, 250, 500, method='label_str')
 
-        typ = []
-        zipped = zip(data_list, anno_list, anno_typ_list)
         '''test code'''
         # plt.plot(sig)
         # plt.plot(anno_r_idx)
@@ -186,13 +185,27 @@ def prepare_training_set_aha(set_len=5000, db_dir='wfdb/aha'):
 
         data_list.append(sig)
         anno_list.append(anno_r_idx)
-        anno_typ_list.append(anno.subtype)
+        anno_typ_list.append(anno_typ_idx)
 
+    input = []
+    label = []
+    typ = []
+    zipped = zip(data_list, anno_list, anno_typ_list)
+    cnt = 0
+    for (data, anno_r_idx, anno_typ_idx) in zipped:
+        cnt += 1
+        idx = 0
+        while idx+set_len < len(data):
+            d = data[idx:idx + set_len]
+            input.append(d)
 
-        input = []
-        label = []
-        lb = []
-        for idx2 in range(len(d)):
-            lb.append(0)
-    return (data_list, anno_list, anno_typ_list)
+            lb = anno_r_idx[idx:idx + set_len]
+            label.append(lb)
+
+            at = anno_typ_idx[idx:idx + set_len]
+            typ.append(at)
+
+            idx += set_len
+
+    return (input, label, typ)
 
