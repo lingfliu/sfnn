@@ -37,6 +37,9 @@ def resample(sig, fs, fs_new, method='linear'):
 
 
 '''test code'''
+# a = [(1,[0,0,0]), (3,[1,1,1]), (6,[2,2,2]), (0,[3,3,3])]
+# a = sorted(a, key=lambda x: x[0])
+# print(a)
 #
 # sig = [p for p in range(10000)]
 # fs = 3
