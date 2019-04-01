@@ -52,9 +52,9 @@ fs = 500  # sampling rate of mitdb
 # for ii in range(np.shape(input)[0]):
 #     plt.cla()
 #     plt.plot(x_train[ii])
-#     # plt.plot(y_train[ii])
+#     plt.plot(y_train[ii])
 #     plt.plot(label[ii])
-#     plt.pause(1)
+#     plt.pause(0.5)
 #     # plt.ioff()
 #     plt.show()
 
@@ -123,18 +123,18 @@ o6 = Concatenate()([o1_norm,o6])
 o6 = Dropout(0.2)(o6)
 o6 = BatchNormalization()(o6)
 
-classifier = Conv1D(2, 1, activation = 'softmax')(o6)
+classifier = Conv1D(2, 1, activation = 'sigmoid')(o6)
 
 model = Model(input, classifier)
 print(model.summary())
 
-model.compile(optimizer=keras.optimizers.Adam(lr=0.001), metrics=['acc', 'mae'], loss='categorical_crossentropy')
+model.compile(optimizer='adam', metrics=['acc', 'mae'], loss='categorical_crossentropy')
 
 '''65% for training, 20% for validation, 15% for testing'''
 len_set = np.shape(x_train)[0]
-len_train = 6000 # (int)(len_set * 0.65)
-len_valid = 2000 # (int)(len_set * 0.2)
-len_test = 2000
+len_train = 4000 # (int)(len_set * 0.65)
+len_valid = 1500 # (int)(len_set * 0.2)
+len_test = 500
 # len_train = (int)(len_set * 0.65)
 # len_valid = (int)(len_set * 0.2)
 # len_test = len_set - len_train - len_valid
@@ -148,20 +148,20 @@ expected = y_train[len_train + len_valid:len_train+len_valid+len_test]
 predicted = model.predict(tested)
 
 
-'''test plot'''
-plt.figure(1)
-plt.ion()
-for ii in range(np.shape(tested)[0]):
-    plt.cla()
-    ex = [np.argmax(p) for p in expected[ii]]
-    pr = [np.argmax(p) for p in predicted[ii]]
-    plt.plot(tested[ii])
-    plt.plot(ex)
-    plt.plot(pr)
-    plt.legend(['sig', 'expect', 'predict'])
-    plt.pause(1)
-    # plt.ioff()
-    plt.show()
+# '''test plot'''
+# plt.figure(1)
+# plt.ion()
+# for ii in range(np.shape(tested)[0]):
+#     plt.cla()
+#     ex = [np.argmax(p) for p in expected[ii]]
+#     pr = [np.argmax(p) for p in predicted[ii]]
+#     plt.plot(tested[ii])
+#     plt.plot(ex)
+#     plt.plot(pr)
+#     plt.legend(['sig', 'expect', 'predict'])
+#     plt.pause(1)
+#     # plt.ioff()
+#     plt.show()
 
 # '''save the results'''
 # date_str = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')

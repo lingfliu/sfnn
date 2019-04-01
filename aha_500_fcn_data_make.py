@@ -11,6 +11,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
+from array_tool import  med_filter
+
 '''global parameters'''
 input_dim = 5000
 output_dim = 5000
@@ -31,21 +33,21 @@ def label_expand(label_pos, label, queue):
 
 if __name__ == '__main__':
     fs = 500 # re-sampling rate
-    # '''load training data and shuffle'''
-    # (input, label_raw, label_typ_raw) = prepare_training_set_aha(set_len=5000)
-    # paired = []
-    # for idx in range(len(input)):
-    #     paired.append((input[idx], label_raw[idx], label_typ_raw[idx]))
-    # np.random.shuffle(paired)
-    # input = []
-    # label_raw = []
-    # for (i, l, t) in paired:
-    #     input.append(i)
-    #     label_raw.append(l)
-    #     label_typ_raw.append(t)
-    #
-    # '''save tmp data'''
-    # pickle.dump((input, label_raw, label_typ_raw), open('aha_500_qrs.dat', 'wb'))
+    '''load training data and shuffle'''
+    (input, label_raw, label_typ_raw) = prepare_training_set_aha(set_len=5000)
+    paired = []
+    for idx in range(len(input)):
+        paired.append((input[idx], label_raw[idx], label_typ_raw[idx]))
+    np.random.shuffle(paired)
+    input = []
+    label_raw = []
+    for (i, l, t) in paired:
+        input.append(i)
+        label_raw.append(l)
+        label_typ_raw.append(t)
+
+    '''save tmp data'''
+    pickle.dump((input, label_raw, label_typ_raw), open('aha_500_qrs.dat', 'wb'))
 
     '''load tmp data'''
     (input_bad, label_bad, label_typ_bad) = pickle.load(open('aha_500_qrs.dat', 'rb'))

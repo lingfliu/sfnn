@@ -35,8 +35,20 @@ def resample(sig, fs, fs_new, method='linear'):
             re_sig[(int)(idx/fs*fs_new)] = sig[idx]
         return re_sig
 
+def med_filter(sig, med_len):
+    sig_pad = []
+    for idx in range(med_len):
+        sig_pad.append(sig[0])
+    for s in sig:
+        sig_pad.append(s)
+    for idx in range(med_len):
+        sig_pad.append(sig[-1])
+    med_sig = [sig_pad[idx] - np.median(sig_pad[idx-med_len:idx+med_len]) for idx in range(med_len, len(sig)+med_len, 1)]
+    return med_sig
 
 '''test code'''
+# sig = [1,1,3,2,1,5,7, 8, 4, 2, 0]
+# med_sig = med_filter(sig, med_len=3)
 # a = [(1,[0,0,0]), (3,[1,1,1]), (6,[2,2,2]), (0,[3,3,3])]
 # a = sorted(a, key=lambda x: x[0])
 # print(a)

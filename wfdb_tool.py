@@ -8,6 +8,8 @@ from array_tool import resample
 import shutil
 import os
 
+from array_tool import med_filter
+
 def detect_qrs(sig, fs):
     # qrs_idx = processing.xqrs_detect(sig, fs) # using xqrs algorithm
     qrs_idx = processing.qrs.gqrs_detect(sig, fs) # using gqrs algorithm
@@ -177,6 +179,10 @@ def prepare_training_set_aha(set_len=5000, db_dir='wfdb/aha'):
         sig = resample(sig[:,0], 250, 500, method='linear')
         anno_r_idx = resample(anno_r_idx, 250, 500, method='label')
         anno_typ_idx = resample(anno_typ_idx, 250, 500, method='label_str')
+
+        # baseline removing
+        sig = med_filter(sig, 150)
+
 
         '''test code'''
         # plt.plot(sig)
